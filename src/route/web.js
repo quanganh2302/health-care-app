@@ -4,9 +4,13 @@ let router = express.Router();
 
 let initWebRoutes = (app) => {
   router.get("/", homeController.getHomePage);
-  router.get("/QAdeptrai", (req, res0) => {
-    return res0.send("Hello world width QAdeptrai")
-  });
+  router.get("/CRUD", homeController.getCRUD);
+  router.post("/post-crud",homeController.postCRUD);
+  router.get("/get-crud",homeController.displayGetCRUD);
+  router.get("/edit-crud",homeController.getEditCRUD);
+  router.post("/put-crud",homeController.putCRUD);
+  router.get("/delete-crud",homeController.deleteCRUD);
+
 
   return app.use("/", router);
 };
